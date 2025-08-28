@@ -74,6 +74,7 @@ export default function Wall() {
     return () => clearInterval(interval);
   }, []);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchPosts(); }, []);
 
   // Real-time subscription
@@ -213,7 +214,7 @@ export default function Wall() {
       {/* Header */}
       <div className="bg-blue-500 text-white p-4 shadow-sm">
         <div className="flex justify-between items-center">
-          <h1 className="text-xl font-semibold">{userConfig.name}'s Wall</h1>
+          <h1 className="text-xl font-semibold">{userConfig.name}&apos;s Wall</h1>
           <div className="flex items-center gap-2">
             <div className={`w-2 h-2 rounded-full ${
               connectionStatus === 'connected' ? 'bg-green-400' :
