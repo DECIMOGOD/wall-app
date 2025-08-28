@@ -7,10 +7,11 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 // Database types
-export interface Post {
-  id: number
-  author: string
-  content: string
-  created_at: string
-  timestamp?: string
-}
+export type Post = {
+  id: number;
+  created_at: string;
+  author: string;
+  content: string;
+  image_url: string | null;  // Add this line
+  timestamp?: string;        // Optional timestamp for client-side formatting
+};
